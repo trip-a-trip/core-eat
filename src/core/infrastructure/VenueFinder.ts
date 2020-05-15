@@ -12,7 +12,6 @@ export class VenueFinder {
   ) {}
 
   async findAll(): Promise<Venue[]> {
-    // TODO: implement
-    return [];
+    return this.repo.find();
   }
 }

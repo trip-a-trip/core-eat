@@ -102,6 +102,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:3.2.0"
       ],
       [
+        "date-fns",
+        "npm:2.13.0"
+      ],
+      [
         "eslint",
         "npm:6.8.0"
       ],
@@ -219,6 +223,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["class-transformer", "npm:0.2.3"],
             ["commitizen", "npm:4.1.2"],
             ["cz-conventional-changelog", "npm:3.2.0"],
+            ["date-fns", "npm:2.13.0"],
             ["eslint", "npm:6.8.0"],
             ["eslint-config-airbnb-base", "virtual:ae393721d618a4fc4c938be6e60683e56b654b235cc0afb90d874184a170b8ed7629fd2c34ee5b53047adab44f128e6e7378f1752aef39803ad65062ae43258d#npm:14.1.0"],
             ["eslint-config-prettier", "virtual:ae393721d618a4fc4c938be6e60683e56b654b235cc0afb90d874184a170b8ed7629fd2c34ee5b53047adab44f128e6e7378f1752aef39803ad65062ae43258d#npm:6.11.0"],
@@ -3422,6 +3427,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["class-transformer", "npm:0.2.3"],
             ["commitizen", "npm:4.1.2"],
             ["cz-conventional-changelog", "npm:3.2.0"],
+            ["date-fns", "npm:2.13.0"],
             ["eslint", "npm:6.8.0"],
             ["eslint-config-airbnb-base", "virtual:ae393721d618a4fc4c938be6e60683e56b654b235cc0afb90d874184a170b8ed7629fd2c34ee5b53047adab44f128e6e7378f1752aef39803ad65062ae43258d#npm:14.1.0"],
             ["eslint-config-prettier", "virtual:ae393721d618a4fc4c938be6e60683e56b654b235cc0afb90d874184a170b8ed7629fd2c34ee5b53047adab44f128e6e7378f1752aef39803ad65062ae43258d#npm:6.11.0"],
@@ -3613,6 +3619,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/data-uri-to-buffer-npm-1.2.0-fac223906f-3.zip/node_modules/data-uri-to-buffer/",
           "packageDependencies": [
             ["data-uri-to-buffer", "npm:1.2.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["date-fns", [
+        ["npm:2.13.0", {
+          "packageLocation": "./.yarn/cache/date-fns-npm-2.13.0-b1b77913e4-3.zip/node_modules/date-fns/",
+          "packageDependencies": [
+            ["date-fns", "npm:2.13.0"]
           ],
           "linkType": "HARD",
         }]

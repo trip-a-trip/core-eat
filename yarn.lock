@@ -2841,6 +2841,7 @@ __metadata:
     class-transformer: ^0.2.3
     commitizen: ^4.0.4
     cz-conventional-changelog: ^3.1.0
+    date-fns: ^2.13.0
     eslint: ^6.8.0
     eslint-config-airbnb-base: ^14.1.0
     eslint-config-prettier: ^6.10.1
@@ -3019,6 +3020,13 @@ __metadata:
   version: 1.2.0
   resolution: "data-uri-to-buffer@npm:1.2.0"
   checksum: 3/5d02c9ece0208fb0123f198bcf4eb3b3544803d64a08fe7eff9dbaa334a1ddede6b98a6f0c7c152ca13492379c0bd7ec064f8ab2bb7f155eb4e98905c0ea9e37
+  languageName: node
+  linkType: hard
+
+"date-fns@npm:^2.13.0":
+  version: 2.13.0
+  resolution: "date-fns@npm:2.13.0"
+  checksum: 3/5b2799f5927d3254308086775e13e72c5b7eb46b860225a5a7c507921ab376b3249d9b7e14cdaa19fefd5b5e61443df2f6f46c0b5e83e28bb117777705b8646f
   languageName: node
   linkType: hard
 
