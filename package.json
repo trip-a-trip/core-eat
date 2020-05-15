@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "yarn nodemon",
     "build": "yarn tsn",
+    "types": "yarn tsc --noEmit",
     "prod": "yarn pm2-runtime ./ecosystem.config.js",
     "pretty": "yarn prettier --write .",
     "commit": "yarn git-cz",
