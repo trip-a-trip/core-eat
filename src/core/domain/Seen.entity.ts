@@ -1,14 +1,14 @@
-import { Entity, Column } from 'typeorm';
+import { Entity, PrimaryColumn } from 'typeorm';
 
 @Entity({ name: 'seen' })
 export class Seen {
-  @Column({ name: 'venue_id' })
+  @PrimaryColumn({ name: 'venue_id' })
   venueId: string;
 
-  @Column({ name: 'user_id' })
+  @PrimaryColumn({ name: 'user_id' })
   userId: string;
 
-  @Column({ name: 'date' })
+  @PrimaryColumn({ name: 'date' })
   date: Date;
 
   constructor(venueId: string, userId: string, date: Date) {

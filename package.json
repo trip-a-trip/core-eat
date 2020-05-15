@@ -21,6 +21,7 @@
     "@nestjs/typeorm": "^7.0.0",
     "@solid-soda/config": "^2.2.0",
     "@solid-soda/evolutions": "^0.1.2",
+    "class-transformer": "^0.2.3",
     "fastify": "^2.14.1",
     "fastify-swagger": "^2.5.1",
     "geolib": "^3.2.1",

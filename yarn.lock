@@ -2073,6 +2073,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"class-transformer@npm:^0.2.3":
+  version: 0.2.3
+  resolution: "class-transformer@npm:0.2.3"
+  checksum: 3/e5967902d0d3b142f055608b85236ad099b42445ffbe61d69f8e5d6a5cfed80fe0ee68f7becfc0a821685d7e72d8decc5feb8d45d84d921cbfc11a01b6d895b9
+  languageName: node
+  linkType: hard
+
 "class-utils@npm:^0.3.5":
   version: 0.3.6
   resolution: "class-utils@npm:0.3.6"
@@ -2831,6 +2838,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^2.27.0
     "@typescript-eslint/parser": ^2.27.0
     "@yarnpkg/pnpify": ^2.0.0-rc.22
+    class-transformer: ^0.2.3
     commitizen: ^4.0.4
     cz-conventional-changelog: ^3.1.0
     eslint: ^6.8.0
