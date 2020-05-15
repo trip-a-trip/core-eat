@@ -5,17 +5,26 @@ import { getDistance } from 'geolib';
 import { Coordinates } from './Coordinates';
 import { Venue } from './Venue.entity';
 import { Seen } from './Seen.entity';
+import { HistoryFinder } from '../infrastructure/HistoryFinder';
+import { VenueFinder } from '../infrastructure/VenueFinder';
 
 const DISTANCE_THRESHOLD_IN_METERS = 2000;
 
 @Injectable()
 export class VenueChoicer {
+  constructor(
+    private readonly history: HistoryFinder,
+    private readonly store: VenueFinder,
+  ) {}
+
   async choice(
     userId: string,
     coordinates: Coordinates,
   ): Promise<Venue | null> {
-    const venues: Venue[] = []; // TODO: get from db
-    const seenToday: Seen[] = []; // TODO: get from db
+    const [seenToday, venues] = await Promise.all([
+      this.history.findTodayHistory(userId),
+      this.store.findAll(),
+    ]);
 
     const haveNotSeenVenue = this.findVenue(coordinates, venues, seenToday);
     if (haveNotSeenVenue) {
@@ -43,14 +52,8 @@ export class VenueChoicer {
   }
 
   private filterByDistance(venue: Venue, coordinates: Coordinates): boolean {
-    const venueCoordinates = venue.coordinates;
-
-    if (!venueCoordinates) {
-      return false;
-    }
-
-    const distance = getDistance(venueCoordinates, coordinates);
-
-    return distance < DISTANCE_THRESHOLD_IN_METERS;
+    return (
+      getDistance(venue.coordinates, coordinates) < DISTANCE_THRESHOLD_IN_METERS
+    );
   }
 }
