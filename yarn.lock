@@ -615,6 +615,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/lodash@npm:^4.14.150":
+  version: 4.14.150
+  resolution: "@types/lodash@npm:4.14.150"
+  checksum: 3/0e9ade0b8ace23845ffb1d17b91142abae183c997a96072339cc1ab34395e2f8bc20ad472b9efd879a8b11ee06ae9dde1b9c4c15ce2f63cbee3a558c30a7852d
+  languageName: node
+  linkType: hard
+
 "@types/minimatch@npm:*":
   version: 3.0.3
   resolution: "@types/minimatch@npm:3.0.3"
@@ -633,6 +640,13 @@ __metadata:
   version: 14.0.1
   resolution: "@types/node@npm:14.0.1"
   checksum: 3/97255869f674e3324fdef235173bafb7911a0786434703738008d92f5a4ec189bab2c08a1847f80a6569a5622f0f44a190e1479b08e363368a847e84e0c00902
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:12":
+  version: 12.12.39
+  resolution: "@types/node@npm:12.12.39"
+  checksum: 3/8e899cfa314c5309142accd381e5d64a1acecb8962016b2c621a1c89ab39454e181e04a022d1f47186b198b3eef6fe366e19ee7869dd900fb548e440c12f4826
   languageName: node
   linkType: hard
 
@@ -2812,6 +2826,8 @@ __metadata:
     "@solid-soda/config": ^2.2.0
     "@solid-soda/evolutions": ^0.1.2
     "@solid-soda/tsn": ^1.2.3
+    "@types/lodash": ^4.14.150
+    "@types/node": 12
     "@typescript-eslint/eslint-plugin": ^2.27.0
     "@typescript-eslint/parser": ^2.27.0
     "@yarnpkg/pnpify": ^2.0.0-rc.22
@@ -2826,8 +2842,10 @@ __metadata:
     eslint-plugin-unicorn: ^18.0.1
     fastify: ^2.14.1
     fastify-swagger: ^2.5.1
+    geolib: ^3.2.1
     husky: ^4.2.5
     lint-staged: ^10.1.3
+    lodash: ^4.17.15
     nodemon: ^2.0.4
     pg: ^8.2.0
     pm2: ^4.4.0
@@ -4625,6 +4643,13 @@ fsevents@^1.2.7:
     strip-ansi: ^3.0.1
     wide-align: ^1.1.0
   checksum: 3/b136dbeb8e40acaaddab6c71c9f34d3c9aa104efc538c8c0ddcd74b25efb8daeb8dca24a9b30626b477d66beccd3dee8dd31e25eb4c7c97ec58a3f1a82914be1
+  languageName: node
+  linkType: hard
+
+"geolib@npm:^3.2.1":
+  version: 3.2.1
+  resolution: "geolib@npm:3.2.1"
+  checksum: 3/35008e2ed708d34ae41dd98b5b7b1e9ed5720506468c293a30674e386901ad15167e760fe7c3fa51b79424d0d9673042c8648f4842a64fda991c090b3e203577
   languageName: node
   linkType: hard
 

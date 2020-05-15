@@ -70,6 +70,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:1.2.3"
       ],
       [
+        "@types/lodash",
+        "npm:4.14.150"
+      ],
+      [
+        "@types/node",
+        "npm:12.12.39"
+      ],
+      [
         "@typescript-eslint/eslint-plugin",
         "virtual:ae393721d618a4fc4c938be6e60683e56b654b235cc0afb90d874184a170b8ed7629fd2c34ee5b53047adab44f128e6e7378f1752aef39803ad65062ae43258d#npm:2.33.0"
       ],
@@ -126,12 +134,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:2.5.1"
       ],
       [
+        "geolib",
+        "npm:3.2.1"
+      ],
+      [
         "husky",
         "npm:4.2.5"
       ],
       [
         "lint-staged",
         "npm:10.2.2"
+      ],
+      [
+        "lodash",
+        "npm:4.17.15"
       ],
       [
         "nodemon",
@@ -191,6 +207,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@solid-soda/config", "npm:2.2.0"],
             ["@solid-soda/evolutions", "npm:0.1.2"],
             ["@solid-soda/tsn", "npm:1.2.3"],
+            ["@types/lodash", "npm:4.14.150"],
+            ["@types/node", "npm:12.12.39"],
             ["@typescript-eslint/eslint-plugin", "virtual:ae393721d618a4fc4c938be6e60683e56b654b235cc0afb90d874184a170b8ed7629fd2c34ee5b53047adab44f128e6e7378f1752aef39803ad65062ae43258d#npm:2.33.0"],
             ["@typescript-eslint/parser", "virtual:ae393721d618a4fc4c938be6e60683e56b654b235cc0afb90d874184a170b8ed7629fd2c34ee5b53047adab44f128e6e7378f1752aef39803ad65062ae43258d#npm:2.33.0"],
             ["@yarnpkg/pnpify", "virtual:ae393721d618a4fc4c938be6e60683e56b654b235cc0afb90d874184a170b8ed7629fd2c34ee5b53047adab44f128e6e7378f1752aef39803ad65062ae43258d#npm:2.0.0-rc.22"],
@@ -205,8 +223,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-unicorn", "virtual:ae393721d618a4fc4c938be6e60683e56b654b235cc0afb90d874184a170b8ed7629fd2c34ee5b53047adab44f128e6e7378f1752aef39803ad65062ae43258d#npm:18.0.1"],
             ["fastify", "npm:2.14.1"],
             ["fastify-swagger", "npm:2.5.1"],
+            ["geolib", "npm:3.2.1"],
             ["husky", "npm:4.2.5"],
             ["lint-staged", "npm:10.2.2"],
+            ["lodash", "npm:4.17.15"],
             ["nodemon", "npm:2.0.4"],
             ["pg", "npm:8.2.0"],
             ["pm2", "npm:4.4.0"],
@@ -920,6 +940,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@types/lodash", [
+        ["npm:4.14.150", {
+          "packageLocation": "./.yarn/cache/@types-lodash-npm-4.14.150-a71293c86b-3.zip/node_modules/@types/lodash/",
+          "packageDependencies": [
+            ["@types/lodash", "npm:4.14.150"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["@types/minimatch", [
         ["npm:3.0.3", {
           "packageLocation": "./.yarn/cache/@types-minimatch-npm-3.0.3-c8b0625f84-3.zip/node_modules/@types/minimatch/",
@@ -939,6 +968,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@types/node", [
+        ["npm:12.12.39", {
+          "packageLocation": "./.yarn/cache/@types-node-npm-12.12.39-30dc77e717-3.zip/node_modules/@types/node/",
+          "packageDependencies": [
+            ["@types/node", "npm:12.12.39"]
+          ],
+          "linkType": "HARD",
+        }],
         ["npm:13.13.6", {
           "packageLocation": "./.yarn/cache/@types-node-npm-13.13.6-9419e0e749-3.zip/node_modules/@types/node/",
           "packageDependencies": [
@@ -3364,6 +3400,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@solid-soda/config", "npm:2.2.0"],
             ["@solid-soda/evolutions", "npm:0.1.2"],
             ["@solid-soda/tsn", "npm:1.2.3"],
+            ["@types/lodash", "npm:4.14.150"],
+            ["@types/node", "npm:12.12.39"],
             ["@typescript-eslint/eslint-plugin", "virtual:ae393721d618a4fc4c938be6e60683e56b654b235cc0afb90d874184a170b8ed7629fd2c34ee5b53047adab44f128e6e7378f1752aef39803ad65062ae43258d#npm:2.33.0"],
             ["@typescript-eslint/parser", "virtual:ae393721d618a4fc4c938be6e60683e56b654b235cc0afb90d874184a170b8ed7629fd2c34ee5b53047adab44f128e6e7378f1752aef39803ad65062ae43258d#npm:2.33.0"],
             ["@yarnpkg/pnpify", "virtual:ae393721d618a4fc4c938be6e60683e56b654b235cc0afb90d874184a170b8ed7629fd2c34ee5b53047adab44f128e6e7378f1752aef39803ad65062ae43258d#npm:2.0.0-rc.22"],
@@ -3378,8 +3416,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-unicorn", "virtual:ae393721d618a4fc4c938be6e60683e56b654b235cc0afb90d874184a170b8ed7629fd2c34ee5b53047adab44f128e6e7378f1752aef39803ad65062ae43258d#npm:18.0.1"],
             ["fastify", "npm:2.14.1"],
             ["fastify-swagger", "npm:2.5.1"],
+            ["geolib", "npm:3.2.1"],
             ["husky", "npm:4.2.5"],
             ["lint-staged", "npm:10.2.2"],
+            ["lodash", "npm:4.17.15"],
             ["nodemon", "npm:2.0.4"],
             ["pg", "npm:8.2.0"],
             ["pm2", "npm:4.4.0"],
@@ -5389,6 +5429,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["string-width", "npm:1.0.2"],
             ["strip-ansi", "npm:3.0.1"],
             ["wide-align", "npm:1.1.3"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["geolib", [
+        ["npm:3.2.1", {
+          "packageLocation": "./.yarn/cache/geolib-npm-3.2.1-1a87df5ee0-3.zip/node_modules/geolib/",
+          "packageDependencies": [
+            ["geolib", "npm:3.2.1"]
           ],
           "linkType": "HARD",
         }]
