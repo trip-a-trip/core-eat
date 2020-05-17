@@ -8,7 +8,7 @@ import { VenueKind } from './VenueKind';
 @Entity('venues')
 export class Venue {
   @PrimaryColumn({ name: 'id' })
-  @Exclude()
+  @ApiProperty({ example: 'gfdfdg4532' })
   id: string;
 
   @Column({ name: 'name' })
