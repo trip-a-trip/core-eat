@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/trip-a-trip/core-eat/compare/v1.1.0...v1.2.0) (2020-05-17)
+
+### Features
+
+- add links to venue ([e6c16fa](https://github.com/trip-a-trip/core-eat/commit/e6c16fa61f91d4b540bf839dbd1877c0f5c54238))
+
 ## 1.1.0 (2020-05-17)
 
 ### Features
