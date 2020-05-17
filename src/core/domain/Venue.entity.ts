@@ -1,9 +1,10 @@
-import { Exclude, Expose } from 'class-transformer';
+import { Exclude, Expose, Type } from 'class-transformer';
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import { Entity, PrimaryColumn, Column } from 'typeorm';
 
 import { Coordinates } from './Coordinates';
 import { VenueKind } from './VenueKind';
+import { Link } from './Link.vo';
 
 @Entity('venues')
 export class Venue {
@@ -52,6 +53,10 @@ export class Venue {
   @Column({ name: 'longitude' })
   @Exclude()
   private longitude: number;
+
+  @Column({ name: 'links', type: 'jsonb' })
+  @Type(() => Link)
+  readonly links: Link[] = [];
 
   constructor(id: string, name: string, latitude: number, longitude: number) {
     this.id = id;
