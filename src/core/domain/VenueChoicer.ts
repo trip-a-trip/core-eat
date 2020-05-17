@@ -35,12 +35,21 @@ export class VenueChoicer {
       chain(venues)
         .filter((venue) => this.filterByDistance(venue, coordinates))
         .differenceWith(seenVenues, (venue, seen) => venue.id === seen.venueId)
-        .sortBy((venue) => venue.isAmazing)
-        .sortBy((venue) => getDistance(venue.coordinates!, coordinates))
+        .sortBy((venue) => this.getProductivity(venue, coordinates))
         // TODO: add filter by time of day
         .first()
         .value()
     );
+  }
+
+  private getProductivity(venue: Venue, coordinates: Coordinates): number {
+    const baseProductivity =
+      DISTANCE_THRESHOLD_IN_METERS -
+      getDistance(venue.coordinates, coordinates);
+    const amazingMultiplier = venue.isAmazing ? 2 : 1;
+    const expensiveMultiplier = venue.isExpensive ? 0.8 : 1;
+
+    return baseProductivity * amazingMultiplier * expensiveMultiplier;
   }
 
   private filterByDistance(venue: Venue, coordinates: Coordinates): boolean {
