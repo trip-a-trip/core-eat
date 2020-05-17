@@ -21,15 +21,7 @@ export class VenueChoicer {
     userId: string,
     coordinates: Coordinates,
   ): Promise<Venue | null> {
-    const [seenToday, venues] = await Promise.all([
-      this.history.findTodayHistory(userId),
-      this.store.findAll(),
-    ]);
-
-    const haveNotSeenVenue = this.findVenue(coordinates, venues, seenToday);
-    if (haveNotSeenVenue) {
-      return haveNotSeenVenue;
-    }
+    const venues = await this.store.findAll();
 
     return this.findVenue(coordinates, venues);
   }
