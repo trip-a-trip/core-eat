@@ -45,7 +45,7 @@ workflows:
           image_name: 'core-eat'
           image_version: CIRCLE_TAG
           path_to_app: PATH_TO_APP
-          apply_post_install: false
+          apply_post_install: true
           post_install_script: 'yarn evolutions -y'
           container_name: 'eat_app'
           filters:
