@@ -73,6 +73,9 @@ export class VenueChoicer {
       Math.abs(differenceInMinutes(now, times.dusk)) +
       Math.abs(differenceInMinutes(now, times.night)) / 2;
 
+    console.log(coordinates);
+    console.log(toMorning, toNoon, toEventing);
+
     if (toMorning <= toNoon && toMorning <= toEventing) {
       kinds.add(VenueKind.Breakfast);
     }
