@@ -32,7 +32,6 @@ export class VenueController {
     @Query('longitude', ParseFloatPipe) longitude: number,
   ) {
     const venue = await this.venues.choice(
-      userId,
       new Coordinates(latitude, longitude),
     );
 

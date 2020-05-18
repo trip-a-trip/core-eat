@@ -78,6 +78,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:12.12.39"
       ],
       [
+        "@types/suncalc",
+        "npm:1.8.0"
+      ],
+      [
         "@typescript-eslint/eslint-plugin",
         "virtual:ae393721d618a4fc4c938be6e60683e56b654b235cc0afb90d874184a170b8ed7629fd2c34ee5b53047adab44f128e6e7378f1752aef39803ad65062ae43258d#npm:2.33.0"
       ],
@@ -186,6 +190,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:7.1.0"
       ],
       [
+        "suncalc",
+        "npm:1.8.0"
+      ],
+      [
         "ts-node",
         "virtual:ae393721d618a4fc4c938be6e60683e56b654b235cc0afb90d874184a170b8ed7629fd2c34ee5b53047adab44f128e6e7378f1752aef39803ad65062ae43258d#npm:8.10.1"
       ],
@@ -217,6 +225,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@solid-soda/tsn", "npm:1.2.3"],
             ["@types/lodash", "npm:4.14.150"],
             ["@types/node", "npm:12.12.39"],
+            ["@types/suncalc", "npm:1.8.0"],
             ["@typescript-eslint/eslint-plugin", "virtual:ae393721d618a4fc4c938be6e60683e56b654b235cc0afb90d874184a170b8ed7629fd2c34ee5b53047adab44f128e6e7378f1752aef39803ad65062ae43258d#npm:2.33.0"],
             ["@typescript-eslint/parser", "virtual:ae393721d618a4fc4c938be6e60683e56b654b235cc0afb90d874184a170b8ed7629fd2c34ee5b53047adab44f128e6e7378f1752aef39803ad65062ae43258d#npm:2.33.0"],
             ["@yarnpkg/pnpify", "virtual:ae393721d618a4fc4c938be6e60683e56b654b235cc0afb90d874184a170b8ed7629fd2c34ee5b53047adab44f128e6e7378f1752aef39803ad65062ae43258d#npm:2.0.0-rc.22"],
@@ -244,6 +253,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["reflect-metadata", "npm:0.1.13"],
             ["rxjs", "npm:6.5.5"],
             ["standard-version", "npm:7.1.0"],
+            ["suncalc", "npm:1.8.0"],
             ["ts-node", "virtual:ae393721d618a4fc4c938be6e60683e56b654b235cc0afb90d874184a170b8ed7629fd2c34ee5b53047adab44f128e6e7378f1752aef39803ad65062ae43258d#npm:8.10.1"],
             ["typeorm", "npm:0.2.24"],
             ["typescript", "patch:typescript@npm%3A3.9.2#builtin<compat/typescript>::version=3.9.2&hash=8cac75"]
@@ -1024,6 +1034,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@types/responselike", "npm:1.0.0"],
             ["@types/node", "npm:14.0.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@types/suncalc", [
+        ["npm:1.8.0", {
+          "packageLocation": "./.yarn/cache/@types-suncalc-npm-1.8.0-b3555d5a79-3.zip/node_modules/@types/suncalc/",
+          "packageDependencies": [
+            ["@types/suncalc", "npm:1.8.0"]
           ],
           "linkType": "HARD",
         }]
@@ -3421,6 +3440,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@solid-soda/tsn", "npm:1.2.3"],
             ["@types/lodash", "npm:4.14.150"],
             ["@types/node", "npm:12.12.39"],
+            ["@types/suncalc", "npm:1.8.0"],
             ["@typescript-eslint/eslint-plugin", "virtual:ae393721d618a4fc4c938be6e60683e56b654b235cc0afb90d874184a170b8ed7629fd2c34ee5b53047adab44f128e6e7378f1752aef39803ad65062ae43258d#npm:2.33.0"],
             ["@typescript-eslint/parser", "virtual:ae393721d618a4fc4c938be6e60683e56b654b235cc0afb90d874184a170b8ed7629fd2c34ee5b53047adab44f128e6e7378f1752aef39803ad65062ae43258d#npm:2.33.0"],
             ["@yarnpkg/pnpify", "virtual:ae393721d618a4fc4c938be6e60683e56b654b235cc0afb90d874184a170b8ed7629fd2c34ee5b53047adab44f128e6e7378f1752aef39803ad65062ae43258d#npm:2.0.0-rc.22"],
@@ -3448,6 +3468,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["reflect-metadata", "npm:0.1.13"],
             ["rxjs", "npm:6.5.5"],
             ["standard-version", "npm:7.1.0"],
+            ["suncalc", "npm:1.8.0"],
             ["ts-node", "virtual:ae393721d618a4fc4c938be6e60683e56b654b235cc0afb90d874184a170b8ed7629fd2c34ee5b53047adab44f128e6e7378f1752aef39803ad65062ae43258d#npm:8.10.1"],
             ["typeorm", "npm:0.2.24"],
             ["typescript", "patch:typescript@npm%3A3.9.2#builtin<compat/typescript>::version=3.9.2&hash=8cac75"]
@@ -11530,6 +11551,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/strip-json-comments-npm-3.1.0-fbc5f88936-3.zip/node_modules/strip-json-comments/",
           "packageDependencies": [
             ["strip-json-comments", "npm:3.1.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["suncalc", [
+        ["npm:1.8.0", {
+          "packageLocation": "./.yarn/cache/suncalc-npm-1.8.0-0e8e05653a-3.zip/node_modules/suncalc/",
+          "packageDependencies": [
+            ["suncalc", "npm:1.8.0"]
           ],
           "linkType": "HARD",
         }]

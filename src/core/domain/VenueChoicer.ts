@@ -1,45 +1,33 @@
 import { Injectable } from '@nestjs/common';
 import { chain } from 'lodash';
 import { getDistance } from 'geolib';
+import { getTimes } from 'suncalc';
+import { differenceInMinutes } from 'date-fns';
 
 import { Coordinates } from './Coordinates';
 import { Venue } from './Venue.entity';
-import { Seen } from './Seen.entity';
-import { HistoryFinder } from '../infrastructure/HistoryFinder';
 import { VenueFinder } from '../infrastructure/VenueFinder';
+import { VenueKind } from './VenueKind';
 
 const DISTANCE_THRESHOLD_IN_METERS = 2000;
 
 @Injectable()
 export class VenueChoicer {
-  constructor(
-    private readonly history: HistoryFinder,
-    private readonly store: VenueFinder,
-  ) {}
+  constructor(private readonly store: VenueFinder) {}
 
-  async choice(
-    userId: string,
-    coordinates: Coordinates,
-  ): Promise<Venue | null> {
+  async choice(coordinates: Coordinates): Promise<Venue | null> {
     const venues = await this.store.findAll();
 
     return this.findVenue(coordinates, venues);
   }
 
-  private findVenue(
-    coordinates: Coordinates,
-    venues: Venue[],
-    seenVenues: Seen[] = [],
-  ): Venue | null {
-    return (
-      chain(venues)
-        .filter((venue) => this.filterByDistance(venue, coordinates))
-        .differenceWith(seenVenues, (venue, seen) => venue.id === seen.venueId)
-        .sortBy((venue) => this.getProductivity(venue, coordinates))
-        // TODO: add filter by time of day
-        .first()
-        .value()
-    );
+  private findVenue(coordinates: Coordinates, venues: Venue[]): Venue | null {
+    return chain(venues)
+      .filter((venue) => this.filterByDistance(venue, coordinates))
+      .filter((venue) => this.filterByTimeOfDay(venue, coordinates))
+      .sortBy((venue) => this.getProductivity(venue, coordinates))
+      .first()
+      .value();
   }
 
   private getProductivity(venue: Venue, coordinates: Coordinates): number {
@@ -50,6 +38,35 @@ export class VenueChoicer {
     const expensiveMultiplier = venue.isExpensive ? 0.8 : 1;
 
     return baseProductivity * amazingMultiplier * expensiveMultiplier;
+  }
+
+  private filterByTimeOfDay(venue: Venue, coordinates: Coordinates): boolean {
+    const kinds = new Set(VenueKind.BiteDrink);
+
+    const now = new Date();
+    const times = getTimes(now, coordinates.latitude, coordinates.longitude);
+
+    const toMorning =
+      Math.abs(differenceInMinutes(now, times.dawn)) +
+      Math.abs(differenceInMinutes(now, times.goldenHourEnd)) / 2;
+    const toNoon =
+      Math.abs(differenceInMinutes(now, times.solarNoon)) +
+      Math.abs(differenceInMinutes(now, times.goldenHour)) / 2;
+    const toEventing =
+      Math.abs(differenceInMinutes(now, times.dusk)) +
+      Math.abs(differenceInMinutes(now, times.night)) / 2;
+
+    if (toMorning >= toNoon && toMorning >= toEventing) {
+      kinds.add(VenueKind.Breakfast);
+    }
+    if (toNoon >= toMorning && toNoon >= toEventing) {
+      kinds.add(VenueKind.Lunch);
+    }
+    if (toEventing >= toMorning && toEventing >= toNoon) {
+      kinds.add(VenueKind.Dinner);
+    }
+
+    return venue.kind.some((kind) => kinds.has(kind));
   }
 
   private filterByDistance(venue: Venue, coordinates: Coordinates): boolean {

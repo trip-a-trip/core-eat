@@ -680,6 +680,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/suncalc@npm:^1.8.0":
+  version: 1.8.0
+  resolution: "@types/suncalc@npm:1.8.0"
+  checksum: 3/1df005a22affba1c0eb7e4512a74ba238dd59f9e29595ea3237af9bd7606ad79573f4b24c5912e00cd1e339fdaa5ae32ae2e1717ad5f58328f82d8d5fc7cbbe6
+  languageName: node
+  linkType: hard
+
 "@types/swagger-schema-official@npm:^2.0.20":
   version: 2.0.21
   resolution: "@types/swagger-schema-official@npm:2.0.21"
@@ -2835,6 +2842,7 @@ __metadata:
     "@solid-soda/tsn": ^1.2.3
     "@types/lodash": ^4.14.150
     "@types/node": 12
+    "@types/suncalc": ^1.8.0
     "@typescript-eslint/eslint-plugin": ^2.27.0
     "@typescript-eslint/parser": ^2.27.0
     "@yarnpkg/pnpify": ^2.0.0-rc.22
@@ -2862,6 +2870,7 @@ __metadata:
     reflect-metadata: ^0.1.13
     rxjs: ^6.5.5
     standard-version: ^7.1.0
+    suncalc: ^1.8.0
     ts-node: ^8.10.1
     typeorm: ^0.2.24
     typescript: ^3.9.2
@@ -10220,6 +10229,13 @@ fsevents@^1.2.7:
   version: 3.1.0
   resolution: "strip-json-comments@npm:3.1.0"
   checksum: 3/5c272f2c030937c99edd8c02f120c2e5cb49ab41e82db689167e3dc84413ee39dbda9f0476b5345827d9f408fd9ffc81b3c0160253ec599d929ac35fa7ce0260
+  languageName: node
+  linkType: hard
+
+"suncalc@npm:^1.8.0":
+  version: 1.8.0
+  resolution: "suncalc@npm:1.8.0"
+  checksum: 3/26313f0864023629541b63fd5f562176b20cfdf74f229ac0a5233aa98eea46d5971c02676cb149d0237b5ff2bd463dae4ce0c691b413358248b706c9e47912b0
   languageName: node
   linkType: hard
 
