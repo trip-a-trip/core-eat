@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.5](https://github.com/trip-a-trip/core-eat/compare/v1.4.4...v1.4.5) (2020-05-18)
+
+### Bug Fixes
+
+- fix nan in timings ([6a15e51](https://github.com/trip-a-trip/core-eat/commit/6a15e512f839ce52d08b450bf7fb1d60abd9a4e6))
+
 ### [1.4.4](https://github.com/trip-a-trip/core-eat/compare/v1.4.3...v1.4.4) (2020-05-18)
 
 ### Bug Fixes
