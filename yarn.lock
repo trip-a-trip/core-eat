@@ -2879,7 +2879,7 @@ __metadata:
     eslint-plugin-unicorn: ^18.0.1
     fastify: ^2.14.1
     fastify-swagger: ^2.5.1
-    geolib: ^3.2.1
+    geodist: ^0.2.1
     husky: ^4.2.5
     lint-staged: ^10.1.3
     lodash: ^4.17.15
@@ -4691,10 +4691,10 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"geolib@npm:^3.2.1":
-  version: 3.2.1
-  resolution: "geolib@npm:3.2.1"
-  checksum: 3/35008e2ed708d34ae41dd98b5b7b1e9ed5720506468c293a30674e386901ad15167e760fe7c3fa51b79424d0d9673042c8648f4842a64fda991c090b3e203577
+"geodist@npm:^0.2.1":
+  version: 0.2.1
+  resolution: "geodist@npm:0.2.1"
+  checksum: 3/7f83ccd33b596983b28c6059da3e93a9cfec4addf01a5012a386f6b96ba3d89c7ca468a885e53991650352da76e3037a395b2427eea89e4a27a74490225fee6e
   languageName: node
   linkType: hard
 

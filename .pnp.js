@@ -150,8 +150,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:2.5.1"
       ],
       [
-        "geolib",
-        "npm:3.2.1"
+        "geodist",
+        "npm:0.2.1"
       ],
       [
         "husky",
@@ -247,7 +247,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-unicorn", "virtual:ae393721d618a4fc4c938be6e60683e56b654b235cc0afb90d874184a170b8ed7629fd2c34ee5b53047adab44f128e6e7378f1752aef39803ad65062ae43258d#npm:18.0.1"],
             ["fastify", "npm:2.14.1"],
             ["fastify-swagger", "npm:2.5.1"],
-            ["geolib", "npm:3.2.1"],
+            ["geodist", "npm:0.2.1"],
             ["husky", "npm:4.2.5"],
             ["lint-staged", "npm:10.2.2"],
             ["lodash", "npm:4.17.15"],
@@ -3485,7 +3485,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-unicorn", "virtual:ae393721d618a4fc4c938be6e60683e56b654b235cc0afb90d874184a170b8ed7629fd2c34ee5b53047adab44f128e6e7378f1752aef39803ad65062ae43258d#npm:18.0.1"],
             ["fastify", "npm:2.14.1"],
             ["fastify-swagger", "npm:2.5.1"],
-            ["geolib", "npm:3.2.1"],
+            ["geodist", "npm:0.2.1"],
             ["husky", "npm:4.2.5"],
             ["lint-staged", "npm:10.2.2"],
             ["lodash", "npm:4.17.15"],
@@ -5512,11 +5512,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
-      ["geolib", [
-        ["npm:3.2.1", {
-          "packageLocation": "./.yarn/cache/geolib-npm-3.2.1-1a87df5ee0-3.zip/node_modules/geolib/",
+      ["geodist", [
+        ["npm:0.2.1", {
+          "packageLocation": "./.yarn/cache/geodist-npm-0.2.1-f8bd113303-3.zip/node_modules/geodist/",
           "packageDependencies": [
-            ["geolib", "npm:3.2.1"]
+            ["geodist", "npm:0.2.1"]
           ],
           "linkType": "HARD",
         }]

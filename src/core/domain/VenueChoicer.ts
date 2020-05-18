@@ -1,8 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { chain } from 'lodash';
-import { getDistance } from 'geolib';
 import { getTimes } from 'suncalc';
 import { differenceInMinutes } from 'date-fns';
+
+import { getDistanceInMeters } from '&app/utils/getDistanceInMeters';
 
 import { Coordinates } from './Coordinates';
 import { Venue } from './Venue.entity';
@@ -41,7 +42,7 @@ export class VenueChoicer {
   private getProductivity(venue: Venue, coordinates: Coordinates): number {
     const baseProductivity =
       DISTANCE_THRESHOLD_IN_METERS -
-      getDistance(venue.coordinates, coordinates);
+      getDistanceInMeters(venue.coordinates, coordinates);
     const amazingMultiplier = venue.isAmazing ? 2 : 1;
     const expensiveMultiplier = venue.isExpensive ? 0.8 : 1;
 
@@ -79,7 +80,8 @@ export class VenueChoicer {
 
   private filterByDistance(venue: Venue, coordinates: Coordinates): boolean {
     return (
-      getDistance(venue.coordinates, coordinates) < DISTANCE_THRESHOLD_IN_METERS
+      getDistanceInMeters(venue.coordinates, coordinates) <
+      DISTANCE_THRESHOLD_IN_METERS
     );
   }
 }
