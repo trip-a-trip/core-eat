@@ -694,6 +694,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/validator@npm:13.0.0":
+  version: 13.0.0
+  resolution: "@types/validator@npm:13.0.0"
+  checksum: 3/22cd062bf92c81939c7610f94252a1997b0ed4d67f5f39c36db0d28dfb17d554077b8c7abe70cf91bb38bc69d2ec0110e4ccd7cc3a98e177ddcf5bbe2c654426
+  languageName: node
+  linkType: hard
+
 "@typescript-eslint/eslint-plugin@npm:^2.27.0":
   version: 2.33.0
   resolution: "@typescript-eslint/eslint-plugin@npm:2.33.0"
@@ -2099,6 +2106,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"class-validator@npm:^0.12.2":
+  version: 0.12.2
+  resolution: "class-validator@npm:0.12.2"
+  dependencies:
+    "@types/validator": 13.0.0
+    google-libphonenumber: ^3.2.8
+    tslib: ">=1.9.0"
+    validator: 13.0.0
+  checksum: 3/ebd2b59df742f4750af173ae5b75fd66251da48568f60810a4aac87587dc4e9b43d42648c0c5e161cc1626e5201a3d7500fc341b31134a68d9420838fedc8771
+  languageName: node
+  linkType: hard
+
 "clean-regexp@npm:^1.0.0":
   version: 1.0.0
   resolution: "clean-regexp@npm:1.0.0"
@@ -2847,6 +2866,7 @@ __metadata:
     "@typescript-eslint/parser": ^2.27.0
     "@yarnpkg/pnpify": ^2.0.0-rc.22
     class-transformer: ^0.2.3
+    class-validator: ^0.12.2
     commitizen: ^4.0.4
     cz-conventional-changelog: ^3.1.0
     date-fns: ^2.13.0
@@ -5022,6 +5042,13 @@ fsevents@^1.2.7:
   dependencies:
     sparkles: ^1.0.0
   checksum: 3/f4769ac0306a129d465b8d8ab84ead9c3b5c0beac81406184f6fdd7ec6832a81ffd5487b8bb0ce8787945b7f44ae5eab85c027e0abbfb353bff3ad06c838b257
+  languageName: node
+  linkType: hard
+
+"google-libphonenumber@npm:^3.2.8":
+  version: 3.2.9
+  resolution: "google-libphonenumber@npm:3.2.9"
+  checksum: 3/b7d2f6686667f9704393aed5cfe596dfdb179772d8eca9efb3d9b5b7b07a13e70c4a8b85dde4e0da35a0874ae26df84e2755c0c6e9df41b7299ec5355f3458ae
   languageName: node
   linkType: hard
 
@@ -10622,6 +10649,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"tslib@npm:>=1.9.0":
+  version: 2.0.0
+  resolution: "tslib@npm:2.0.0"
+  checksum: 3/a7369a224f12e223fb42f2a720389601a24a1e1c96c55bf0d8d4b60c131e574c175ae23578b8d1bd3f4ec790c7e0a82b43733f022f866d48a23aeadd3910755d
+  languageName: node
+  linkType: hard
+
 "tslib@npm:^1.8.1, tslib@npm:^1.9.0":
   version: 1.13.0
   resolution: "tslib@npm:1.13.0"
@@ -11035,6 +11069,13 @@ fsevents@^1.2.7:
     spdx-correct: ^3.0.0
     spdx-expression-parse: ^3.0.0
   checksum: 3/940899bd4eacfa012ceecb10a5814ba0e8103da5243aa74d0d62f1f8a405efcd23e034fb7193e2d05b392870c53aabcb1f66439b062075cdcb28bc5d562a8ff6
+  languageName: node
+  linkType: hard
+
+"validator@npm:13.0.0":
+  version: 13.0.0
+  resolution: "validator@npm:13.0.0"
+  checksum: 3/c537ecd87c245aad5466a3821c9f87909d6ddd695daddc37691863a79b481a7efc0f3d3e88d0bf001d8d9c64fb4151c4e7a92fe060899c86d8ad9c334dceac2d
   languageName: node
   linkType: hard
 

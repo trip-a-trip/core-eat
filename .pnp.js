@@ -98,6 +98,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:0.2.3"
       ],
       [
+        "class-validator",
+        "npm:0.12.2"
+      ],
+      [
         "commitizen",
         "npm:4.1.2"
       ],
@@ -230,6 +234,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/parser", "virtual:ae393721d618a4fc4c938be6e60683e56b654b235cc0afb90d874184a170b8ed7629fd2c34ee5b53047adab44f128e6e7378f1752aef39803ad65062ae43258d#npm:2.33.0"],
             ["@yarnpkg/pnpify", "virtual:ae393721d618a4fc4c938be6e60683e56b654b235cc0afb90d874184a170b8ed7629fd2c34ee5b53047adab44f128e6e7378f1752aef39803ad65062ae43258d#npm:2.0.0-rc.22"],
             ["class-transformer", "npm:0.2.3"],
+            ["class-validator", "npm:0.12.2"],
             ["commitizen", "npm:4.1.2"],
             ["cz-conventional-changelog", "npm:3.2.0"],
             ["date-fns", "npm:2.13.0"],
@@ -1052,6 +1057,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-swagger-schema-official-npm-2.0.21-e8fdaacf4c-3.zip/node_modules/@types/swagger-schema-official/",
           "packageDependencies": [
             ["@types/swagger-schema-official", "npm:2.0.21"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@types/validator", [
+        ["npm:13.0.0", {
+          "packageLocation": "./.yarn/cache/@types-validator-npm-13.0.0-3945abde2e-3.zip/node_modules/@types/validator/",
+          "packageDependencies": [
+            ["@types/validator", "npm:13.0.0"]
           ],
           "linkType": "HARD",
         }]
@@ -2631,6 +2645,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["class-validator", [
+        ["npm:0.12.2", {
+          "packageLocation": "./.yarn/cache/class-validator-npm-0.12.2-48b8b644ff-3.zip/node_modules/class-validator/",
+          "packageDependencies": [
+            ["class-validator", "npm:0.12.2"],
+            ["@types/validator", "npm:13.0.0"],
+            ["google-libphonenumber", "npm:3.2.9"],
+            ["tslib", "npm:2.0.0"],
+            ["validator", "npm:13.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["clean-regexp", [
         ["npm:1.0.0", {
           "packageLocation": "./.yarn/cache/clean-regexp-npm-1.0.0-f349f98f15-3.zip/node_modules/clean-regexp/",
@@ -3445,6 +3472,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/parser", "virtual:ae393721d618a4fc4c938be6e60683e56b654b235cc0afb90d874184a170b8ed7629fd2c34ee5b53047adab44f128e6e7378f1752aef39803ad65062ae43258d#npm:2.33.0"],
             ["@yarnpkg/pnpify", "virtual:ae393721d618a4fc4c938be6e60683e56b654b235cc0afb90d874184a170b8ed7629fd2c34ee5b53047adab44f128e6e7378f1752aef39803ad65062ae43258d#npm:2.0.0-rc.22"],
             ["class-transformer", "npm:0.2.3"],
+            ["class-validator", "npm:0.12.2"],
             ["commitizen", "npm:4.1.2"],
             ["cz-conventional-changelog", "npm:3.2.0"],
             ["date-fns", "npm:2.13.0"],
@@ -5845,6 +5873,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["glogg", "npm:1.0.2"],
             ["sparkles", "npm:1.0.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["google-libphonenumber", [
+        ["npm:3.2.9", {
+          "packageLocation": "./.yarn/cache/google-libphonenumber-npm-3.2.9-497b37342a-3.zip/node_modules/google-libphonenumber/",
+          "packageDependencies": [
+            ["google-libphonenumber", "npm:3.2.9"]
           ],
           "linkType": "HARD",
         }]
@@ -11988,6 +12025,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["tslib", "npm:1.9.3"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:2.0.0", {
+          "packageLocation": "./.yarn/cache/tslib-npm-2.0.0-4d841ae35a-3.zip/node_modules/tslib/",
+          "packageDependencies": [
+            ["tslib", "npm:2.0.0"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["tsutils", [
@@ -12444,6 +12488,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["validate-npm-package-license", "npm:3.0.4"],
             ["spdx-correct", "npm:3.1.0"],
             ["spdx-expression-parse", "npm:3.0.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["validator", [
+        ["npm:13.0.0", {
+          "packageLocation": "./.yarn/cache/validator-npm-13.0.0-657bea9dad-3.zip/node_modules/validator/",
+          "packageDependencies": [
+            ["validator", "npm:13.0.0"]
           ],
           "linkType": "HARD",
         }]
