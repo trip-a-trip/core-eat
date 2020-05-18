@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.4](https://github.com/trip-a-trip/core-eat/compare/v1.4.3...v1.4.4) (2020-05-18)
+
+### Bug Fixes
+
+- change geodist lib ([a7f1d1a](https://github.com/trip-a-trip/core-eat/commit/a7f1d1a41da652207d0aae0625ff7ec38e144508))
+
 ### [1.4.3](https://github.com/trip-a-trip/core-eat/compare/v1.4.2...v1.4.3) (2020-05-18)
 
 ### Bug Fixes
