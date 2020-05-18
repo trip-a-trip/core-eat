@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.1](https://github.com/trip-a-trip/core-eat/compare/v1.3.0...v1.3.1) (2020-05-18)
+
+### Bug Fixes
+
+- try to fix some filtering bugs ([0621c11](https://github.com/trip-a-trip/core-eat/commit/0621c1172678630162f0a2077dc6d4c9fd56e68b))
+
 ## [1.3.0](https://github.com/trip-a-trip/core-eat/compare/v1.2.1...v1.3.0) (2020-05-18)
 
 ### Features
