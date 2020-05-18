@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/trip-a-trip/core-eat/compare/v1.2.1...v1.3.0) (2020-05-18)
+
+### Features
+
+- add kind filtering ([ff65fa7](https://github.com/trip-a-trip/core-eat/commit/ff65fa7a890c585b973213f3820c704843add428))
+- add on-demand history ([df471fe](https://github.com/trip-a-trip/core-eat/commit/df471fe4dbd056fad746da0667d8de579b9e9c26))
+- add venue sorting ([a69900f](https://github.com/trip-a-trip/core-eat/commit/a69900f3545857c5ac7d64e511c0609d574b08c6))
+- disable history ([152e3f6](https://github.com/trip-a-trip/core-eat/commit/152e3f678a604d739bf394ee7430dd86ab312590))
+
 ### [1.2.1](https://github.com/trip-a-trip/core-eat/compare/v1.2.0...v1.2.1) (2020-05-17)
 
 ## [1.2.0](https://github.com/trip-a-trip/core-eat/compare/v1.1.0...v1.2.0) (2020-05-17)
