@@ -8,21 +8,38 @@ import { Coordinates } from './Coordinates';
 import { Venue } from './Venue.entity';
 import { VenueFinder } from '../infrastructure/VenueFinder';
 import { VenueKind } from './VenueKind';
+import { HistoryFinder } from '../infrastructure/HistoryFinder';
+import { Seen } from './Seen.entity';
 
 const DISTANCE_THRESHOLD_IN_METERS = 2000;
 
 @Injectable()
 export class VenueChoicer {
-  constructor(private readonly store: VenueFinder) {}
+  constructor(
+    private readonly store: VenueFinder,
+    private readonly history: HistoryFinder,
+  ) {}
 
-  async choice(coordinates: Coordinates): Promise<Venue | null> {
-    const venues = await this.store.findAll();
+  async choice(
+    userId: string,
+    coordinates: Coordinates,
+    useHistory?: boolean,
+  ): Promise<Venue | null> {
+    const [venues, seen] = await Promise.all([
+      this.store.findAll(),
+      useHistory ? this.history.findTodayHistory(userId) : [],
+    ]);
 
-    return this.findVenue(coordinates, venues);
+    return this.findVenue(coordinates, venues, seen);
   }
 
-  private findVenue(coordinates: Coordinates, venues: Venue[]): Venue | null {
+  private findVenue(
+    coordinates: Coordinates,
+    venues: Venue[],
+    seen: Seen[],
+  ): Venue | null {
     return chain(venues)
+      .differenceWith(seen, (venue, { venueId }) => venue.id === venueId)
       .filter((venue) => this.filterByDistance(venue, coordinates))
       .filter((venue) => this.filterByTimeOfDay(venue, coordinates))
       .sortBy((venue) => this.getProductivity(venue, coordinates))
