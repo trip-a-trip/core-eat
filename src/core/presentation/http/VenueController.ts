@@ -1,4 +1,4 @@
-import { ApiOkResponse, ApiNotFoundResponse } from '@nestjs/swagger';
+import { ApiOkResponse, ApiNotFoundResponse, ApiQuery } from '@nestjs/swagger';
 import {
   Controller,
   Get,
@@ -27,12 +27,13 @@ export class VenueController {
 
   @Get('/')
   @ApiOkResponse({ type: Venue })
+  @ApiQuery({ name: 'skipIds', type: 'string', isArray: true, required: false })
   @ApiNotFoundResponse()
   async get(
     @Query('userId') userId: string,
     @Query('latitude', ParseFloatPipe) latitude: number,
     @Query('longitude', ParseFloatPipe) longitude: number,
-    @Query('skipIds', ParseArrayPipe) skipIds: string[],
+    @Query('skipIds', ParseArrayPipe) skipIds: string[] = [],
   ) {
     const venue = await this.venues.choice(
       new Coordinates(latitude, longitude),
