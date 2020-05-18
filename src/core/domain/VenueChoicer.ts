@@ -4,6 +4,7 @@ import { getTimes } from 'suncalc';
 import { differenceInMinutes } from 'date-fns';
 
 import { getDistanceInMeters } from '&app/utils/getDistanceInMeters';
+import { getAverage } from '&app/utils/getAverage';
 
 import { Coordinates } from './Coordinates';
 import { Venue } from './Venue.entity';
@@ -50,28 +51,38 @@ export class VenueChoicer {
   }
 
   private filterByTimeOfDay(venue: Venue, coordinates: Coordinates): boolean {
-    const kinds = new Set(VenueKind.BiteDrink);
+    const kinds = new Set();
+    kinds.add(VenueKind.BiteDrink);
 
     const now = new Date();
     const times = getTimes(now, coordinates.latitude, coordinates.longitude);
 
-    const toMorning =
-      Math.abs(differenceInMinutes(now, times.dawn)) +
-      Math.abs(differenceInMinutes(now, times.goldenHourEnd)) / 2;
-    const toNoon =
-      Math.abs(differenceInMinutes(now, times.solarNoon)) +
-      Math.abs(differenceInMinutes(now, times.goldenHour)) / 2;
-    const toEventing =
-      Math.abs(differenceInMinutes(now, times.dusk)) +
-      Math.abs(differenceInMinutes(now, times.night)) / 2;
+    const normalizeTiming = (timing: Date) => {
+      const diff = Math.abs(differenceInMinutes(now, timing));
 
-    if (toMorning <= toNoon && toMorning <= toEventing) {
+      return Number.isNaN(diff) ? Number.MAX_SAFE_INTEGER : diff;
+    };
+
+    const toMorning = getAverage(
+      normalizeTiming(times.dawn),
+      normalizeTiming(times.goldenHourEnd),
+    );
+    const toNoon = getAverage(
+      normalizeTiming(times.solarNoon),
+      normalizeTiming(times.goldenHour),
+    );
+    const toEvening = getAverage(
+      normalizeTiming(times.dusk),
+      normalizeTiming(times.night),
+    );
+
+    if (toMorning <= toNoon && toMorning <= toEvening) {
       kinds.add(VenueKind.Breakfast);
     }
-    if (toNoon <= toMorning && toNoon <= toEventing) {
+    if (toNoon <= toMorning && toNoon <= toEvening) {
       kinds.add(VenueKind.Lunch);
     }
-    if (toEventing <= toMorning && toEventing <= toNoon) {
+    if (toEvening <= toMorning && toEvening <= toNoon) {
       kinds.add(VenueKind.Dinner);
     }
 
