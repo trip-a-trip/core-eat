@@ -6,6 +6,7 @@ import {
   Query,
   UseInterceptors,
   ParseBoolPipe,
+  ParseArrayPipe,
 } from '@nestjs/common';
 
 import { Coordinates } from '&app/core/domain/Coordinates';
@@ -31,12 +32,11 @@ export class VenueController {
     @Query('userId') userId: string,
     @Query('latitude', ParseFloatPipe) latitude: number,
     @Query('longitude', ParseFloatPipe) longitude: number,
-    @Query('useHistory', ParseBoolPipe) useHistory: boolean,
+    @Query('skipIds', ParseArrayPipe) skipIds: string[],
   ) {
     const venue = await this.venues.choice(
-      userId,
       new Coordinates(latitude, longitude),
-      useHistory,
+      skipIds,
     );
 
     if (!venue) {
