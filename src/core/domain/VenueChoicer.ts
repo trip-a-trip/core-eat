@@ -54,7 +54,7 @@ export class VenueChoicer {
     const amazingMultiplier = venue.isAmazing ? 2 : 1;
     const expensiveMultiplier = venue.isExpensive ? 0.8 : 1;
 
-    return baseProductivity * amazingMultiplier * expensiveMultiplier;
+    return baseProductivity * amazingMultiplier * expensiveMultiplier * -1;
   }
 
   private filterByTimeOfDay(venue: Venue, coordinates: Coordinates): boolean {
@@ -73,13 +73,13 @@ export class VenueChoicer {
       Math.abs(differenceInMinutes(now, times.dusk)) +
       Math.abs(differenceInMinutes(now, times.night)) / 2;
 
-    if (toMorning >= toNoon && toMorning >= toEventing) {
+    if (toMorning <= toNoon && toMorning <= toEventing) {
       kinds.add(VenueKind.Breakfast);
     }
-    if (toNoon >= toMorning && toNoon >= toEventing) {
+    if (toNoon <= toMorning && toNoon <= toEventing) {
       kinds.add(VenueKind.Lunch);
     }
-    if (toEventing >= toMorning && toEventing >= toNoon) {
+    if (toEventing <= toMorning && toEventing <= toNoon) {
       kinds.add(VenueKind.Dinner);
     }
 
