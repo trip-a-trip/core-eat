@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.3](https://github.com/trip-a-trip/core-eat/compare/v1.4.2...v1.4.3) (2020-05-18)
+
+### Bug Fixes
+
+- make skipIds optional again =) ([0506b44](https://github.com/trip-a-trip/core-eat/commit/0506b446a10db3eecd61f71718c3b9d4ba5f4bab))
+
 ### [1.4.2](https://github.com/trip-a-trip/core-eat/compare/v1.4.1...v1.4.2) (2020-05-18)
 
 ### Bug Fixes
