@@ -33,7 +33,8 @@ export class VenueController {
     @Query('userId') userId: string,
     @Query('latitude', ParseFloatPipe) latitude: number,
     @Query('longitude', ParseFloatPipe) longitude: number,
-    @Query('skipIds', ParseArrayPipe) skipIds: string[] = [],
+    @Query('skipIds', new ParseArrayPipe({ optional: true }))
+    skipIds: string[] = [],
   ) {
     const venue = await this.venues.choice(
       new Coordinates(latitude, longitude),
