@@ -23,20 +23,25 @@ export class VenueChoicer {
   ): Promise<Venue | null> {
     const venues = await this.store.findAll();
 
-    return this.findVenue(coordinates, venues, skipIds);
+    const fitVenues = this.getFitVenues(coordinates, venues, skipIds);
+
+    return chain(fitVenues)
+      .chunk(fitVenues.length / 2)
+      .first()
+      .sample()
+      .value();
   }
 
-  private findVenue(
+  private getFitVenues(
     coordinates: Coordinates,
     venues: Venue[],
     skipIds: string[],
-  ): Venue | null {
+  ): Venue[] {
     return chain(venues)
       .differenceWith(skipIds, (venue, skipId) => venue.id === skipId)
       .filter((venue) => this.filterByDistance(venue, coordinates))
       .filter((venue) => this.filterByTimeOfDay(venue, coordinates))
       .sortBy((venue) => this.getProductivity(venue, coordinates))
-      .first()
       .value();
   }
 
