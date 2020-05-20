@@ -12,6 +12,9 @@ import { VenueFinder } from '../infrastructure/VenueFinder';
 import { VenueKind } from './VenueKind';
 
 const DISTANCE_THRESHOLD_IN_METERS = 2000;
+const AMAZING_MULTIPILER = 1.5;
+const EXPENSIVE_MULTIPILER = 0.8;
+const NO_REAL_EAT_MULTIPILER = 0.7;
 
 @Injectable()
 export class VenueChoicer {
@@ -49,10 +52,22 @@ export class VenueChoicer {
     const baseProductivity =
       DISTANCE_THRESHOLD_IN_METERS -
       getDistanceInMeters(venue.coordinates, coordinates);
-    const amazingMultiplier = venue.isAmazing ? 2 : 1;
-    const expensiveMultiplier = venue.isExpensive ? 0.8 : 1;
 
-    return baseProductivity * amazingMultiplier * expensiveMultiplier * -1;
+    const amazingMultiplier = venue.isAmazing ? AMAZING_MULTIPILER : 1;
+    const expensiveMultiplier = venue.isExpensive ? EXPENSIVE_MULTIPILER : 1;
+    const onlyBiteDrinkMultiplier = venue.kind.every(
+      (kind) => kind === VenueKind.BiteDrink,
+    )
+      ? NO_REAL_EAT_MULTIPILER
+      : 1;
+
+    const multilier = [
+      amazingMultiplier,
+      expensiveMultiplier,
+      onlyBiteDrinkMultiplier,
+    ].reduce((acc, curr) => acc * curr, -1);
+
+    return baseProductivity * multilier;
   }
 
   private filterByTimeOfDay(venue: Venue, coordinates: Coordinates): boolean {
