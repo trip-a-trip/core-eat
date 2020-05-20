@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/trip-a-trip/core-eat/compare/v1.5.0...v1.6.0) (2020-05-20)
+
+### Features
+
+- add bite-drink pissimisation ([cf5aa34](https://github.com/trip-a-trip/core-eat/commit/cf5aa34b358ee6536e6b3c9e638e5cb97facbacb))
+
 ## [1.5.0](https://github.com/trip-a-trip/core-eat/compare/v1.4.5...v1.5.0) (2020-05-20)
 
 ### Features
