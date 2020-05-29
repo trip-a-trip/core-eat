@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://github.com/trip-a-trip/core-eat/compare/v1.6.0...v1.7.0) (2020-05-29)
+
+### Features
+
+- add history endpoint ([c4e3e6d](https://github.com/trip-a-trip/core-eat/commit/c4e3e6de3d4de14b9d82f4f4d6ada97b0cbb0ca6))
+
 ## [1.6.0](https://github.com/trip-a-trip/core-eat/compare/v1.5.0...v1.6.0) (2020-05-20)
 
 ### Features
