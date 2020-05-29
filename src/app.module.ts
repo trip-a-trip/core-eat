@@ -9,6 +9,8 @@ import { Venue } from './core/domain/Venue.entity';
 import { Seen } from './core/domain/Seen.entity';
 import { VenueFinder } from './core/infrastructure/VenueFinder';
 import { VenueController } from './core/presentation/http/VenueController';
+import { SeenFinder } from './core/infrastructure/SeenFinder';
+import { HistoryController } from './core/presentation/http/HistoryController';
 
 @Module({
   imports: [
@@ -16,8 +18,8 @@ import { VenueController } from './core/presentation/http/VenueController';
     TypeOrmModule.forRootAsync(typeOrmProvider),
     TypeOrmModule.forFeature([Venue, Seen]),
   ],
-  controllers: [VenueController],
-  providers: [VenueChoicer, Historian, VenueFinder],
+  controllers: [VenueController, HistoryController],
+  providers: [VenueChoicer, Historian, VenueFinder, SeenFinder],
 })
 export class AppModule implements NestModule {
   public configure(consumer: MiddlewareConsumer) {
