@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.8.0](https://github.com/trip-a-trip/core-eat/compare/v1.7.0...v1.8.0) (2020-06-04)
+
+### Features
+
+- add venue creation endpoint ([0e2684f](https://github.com/trip-a-trip/core-eat/commit/0e2684f4da06f5316aff1827622150bb7453cd3e))
+
 ## [1.7.0](https://github.com/trip-a-trip/core-eat/compare/v1.6.0...v1.7.0) (2020-05-29)
 
 ### Features
