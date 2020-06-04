@@ -11,6 +11,7 @@ import { VenueFinder } from './core/infrastructure/VenueFinder';
 import { VenueController } from './core/presentation/http/VenueController';
 import { SeenFinder } from './core/infrastructure/SeenFinder';
 import { HistoryController } from './core/presentation/http/HistoryController';
+import { VenueCreator } from './core/application/VenueCreator';
 
 @Module({
   imports: [
@@ -19,7 +20,7 @@ import { HistoryController } from './core/presentation/http/HistoryController';
     TypeOrmModule.forFeature([Venue, Seen]),
   ],
   controllers: [VenueController, HistoryController],
-  providers: [VenueChoicer, Historian, VenueFinder, SeenFinder],
+  providers: [VenueChoicer, Historian, VenueFinder, VenueCreator, SeenFinder],
 })
 export class AppModule implements NestModule {
   public configure(consumer: MiddlewareConsumer) {

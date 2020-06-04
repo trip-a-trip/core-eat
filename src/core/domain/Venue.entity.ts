@@ -28,7 +28,7 @@ export class Venue {
   @ApiProperty({ example: true })
   isAmazing: boolean = false;
 
-  @Column({ name: 'kind', type: 'jsonb' })
+  @Column({ name: 'kind', type: 'varchar', array: true })
   @ApiProperty({
     example: [VenueKind.Lunch, VenueKind.Dinner, VenueKind.BiteDrink],
     enum: Object.values(VenueKind),
@@ -46,6 +46,11 @@ export class Venue {
     return new Coordinates(this.latitude, this.longitude);
   }
 
+  set coordinates(coordinates: Coordinates) {
+    this.latitude = coordinates.latitude;
+    this.longitude = coordinates.longitude;
+  }
+
   @Column({ name: 'latitude' })
   @Exclude()
   private latitude: number;
@@ -55,8 +60,13 @@ export class Venue {
   private longitude: number;
 
   @Column({ name: 'links', type: 'jsonb' })
+  @ApiProperty({ type: Link, isArray: true })
   @Type(() => Link)
   readonly links: Link[] = [];
+
+  @Column({ name: 'author_id', type: 'varchar' })
+  @ApiProperty({ example: 'efkl5645m' })
+  readonly authorId: string | null = null;
 
   constructor(id: string, name: string, latitude: number, longitude: number) {
     this.id = id;

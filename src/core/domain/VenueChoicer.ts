@@ -29,7 +29,7 @@ export class VenueChoicer {
     const fitVenues = this.getFitVenues(coordinates, venues, skipIds);
 
     return chain(fitVenues)
-      .chunk(fitVenues.length / 2)
+      .chunk(Math.ceil(fitVenues.length / 2))
       .first()
       .sample()
       .value();
