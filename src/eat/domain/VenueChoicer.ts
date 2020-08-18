@@ -3,10 +3,9 @@ import { chain } from 'lodash';
 import { getTimes } from 'suncalc';
 import { differenceInMinutes } from 'date-fns';
 
-import { getDistanceInMeters } from '&app/utils/getDistanceInMeters';
-import { getAverage } from '&app/utils/getAverage';
+import { getDistanceInMeters, Coordinates } from '&app/lib/geo';
+import { getAverage } from '&app/lib/math';
 
-import { Coordinates } from './Coordinates';
 import { Venue } from './Venue.entity';
 import { VenueFinder } from '../infrastructure/VenueFinder';
 import { VenueKind } from './VenueKind';

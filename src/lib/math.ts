@@ -1,4 +1,4 @@
-export const getAverage = (...items: number[]) => {
+const getAverage = (...items: number[]) => {
   if (items.length === 0) {
     return NaN;
   }
@@ -7,3 +7,5 @@ export const getAverage = (...items: number[]) => {
 
   return sum / items.length;
 };
+
+export { getAverage };

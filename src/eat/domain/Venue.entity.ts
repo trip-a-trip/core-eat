@@ -2,7 +2,8 @@ import { Exclude, Expose, Type } from 'class-transformer';
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import { Entity, PrimaryColumn, Column } from 'typeorm';
 
-import { Coordinates } from './Coordinates';
+import { Coordinates } from '&app/lib/geo';
+
 import { VenueKind } from './VenueKind';
 import { Link } from './Link.vo';
 

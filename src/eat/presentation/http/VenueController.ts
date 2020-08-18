@@ -15,14 +15,12 @@ import {
   Body,
 } from '@nestjs/common';
 
+import { Coordinates } from '&app/lib/geo';
 import { VenueCreator } from '&app/eat/application/VenueCreator';
 import { VenueChoicer } from '&app/eat/domain/VenueChoicer';
-import { Coordinates } from '&app/eat/domain/Coordinates';
 import { Historian } from '&app/eat/domain/Historian';
 import { Venue } from '&app/eat/domain/Venue.entity';
-
-import { TransformInterceptor } from './TransformInterceptor';
-import { ParseFloatPipe } from './ParseFloatPipe';
+import { TransformInterceptor, ParseFloatPipe } from '&app/lib/nest';
 
 @Controller('/v1/venue')
 @UseInterceptors(TransformInterceptor)
