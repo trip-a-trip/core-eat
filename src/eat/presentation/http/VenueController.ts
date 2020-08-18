@@ -15,11 +15,11 @@ import {
   Body,
 } from '@nestjs/common';
 
-import { VenueCreator } from '&app/core/application/VenueCreator';
-import { VenueChoicer } from '&app/core/domain/VenueChoicer';
-import { Coordinates } from '&app/core/domain/Coordinates';
-import { Historian } from '&app/core/domain/Historian';
-import { Venue } from '&app/core/domain/Venue.entity';
+import { VenueCreator } from '&app/eat/application/VenueCreator';
+import { VenueChoicer } from '&app/eat/domain/VenueChoicer';
+import { Coordinates } from '&app/eat/domain/Coordinates';
+import { Historian } from '&app/eat/domain/Historian';
+import { Venue } from '&app/eat/domain/Venue.entity';
 
 import { TransformInterceptor } from './TransformInterceptor';
 import { ParseFloatPipe } from './ParseFloatPipe';

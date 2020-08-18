@@ -1,6 +1,6 @@
 import geodist from 'geodist';
 
-import { Coordinates } from '&app/core/domain/Coordinates';
+import { Coordinates } from '&app/eat/domain/Coordinates';
 
 export const getDistanceInMeters = (
   one: Coordinates,
