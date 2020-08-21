@@ -7,7 +7,7 @@ import { Coordinates } from '&app/lib/geo';
 import { VenueKind } from './VenueKind';
 import { Link } from './Link.vo';
 
-@Entity('venues')
+@Entity('eat_venues')
 export class Venue {
   @PrimaryColumn({ name: 'id' })
   @ApiProperty({ example: 'gfdfdg4532' })
