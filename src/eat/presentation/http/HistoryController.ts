@@ -1,11 +1,9 @@
 import { Controller, UseInterceptors, Get, Query } from '@nestjs/common';
 import { ApiOkResponse, ApiQuery } from '@nestjs/swagger';
 
-import { SeenFinder } from '&app/core/infrastructure/SeenFinder';
-import { Seen } from '&app/core/domain/Seen.entity';
-
-import { TransformInterceptor } from './TransformInterceptor';
-import { ParseDatePipe } from './ParseDatePipe';
+import { TransformInterceptor, ParseDatePipe } from '&app/lib/nest';
+import { SeenFinder } from '&app/eat/infrastructure/SeenFinder';
+import { Seen } from '&app/eat/domain/Seen.entity';
 
 @Controller('/v1/history')
 @UseInterceptors(TransformInterceptor)
