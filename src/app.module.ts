@@ -3,9 +3,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { EatModule } from './eat/eat.module';
 import { typeOrmProvider } from './external/typeOrmProvider';
+import { UserModule } from './user/user.module';
 
 @Module({
-  imports: [TypeOrmModule.forRootAsync(typeOrmProvider), EatModule],
+  imports: [TypeOrmModule.forRootAsync(typeOrmProvider), EatModule, UserModule],
   controllers: [],
   providers: [],
 })
