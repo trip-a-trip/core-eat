@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.9.0](https://github.com/trip-a-trip/core-eat/compare/v1.8.0...v1.9.0) (2020-08-21)
+
+### Features
+
+- **user:** move core-user to this repo ([cbc7d84](https://github.com/trip-a-trip/core-eat/commit/cbc7d84ab02613ed806de7b278d14823d1479146))
+
 ## [1.8.0](https://github.com/trip-a-trip/core-eat/compare/v1.7.0...v1.8.0) (2020-06-04)
 
 ### Features
