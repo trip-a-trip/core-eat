@@ -6,7 +6,7 @@ import { ApiProperty } from '@nestjs/swagger';
 import { PublishToken } from './publish_token.entity';
 import { Invite } from './invite.entity';
 
-@Entity({ name: 'collaborators' })
+@Entity({ name: 'collaboration_collaborators' })
 export class Collaborator {
   @PrimaryColumn({ name: 'user_id' })
   @ApiProperty({ example: 'fdsfds' })

@@ -2,7 +2,7 @@ import { Entity, PrimaryColumn, Column } from 'typeorm';
 import { DraftFields, Draft as BaseDraft } from '@trip-a-trip/lib';
 import uid from 'uid';
 
-@Entity({ name: 'collaboration_drafts' })
+@Entity({ name: 'collaboration_collaboration_drafts' })
 export class Draft implements BaseDraft {
   @PrimaryColumn({ name: 'id' })
   id: string;

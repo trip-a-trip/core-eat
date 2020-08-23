@@ -6,7 +6,7 @@ import uid from 'uid';
 
 import { Collaborator } from './collaborator.entity';
 
-@Entity({ name: 'invites' })
+@Entity({ name: 'collaboration_invites' })
 export class Invite {
   static COST = 50;
 

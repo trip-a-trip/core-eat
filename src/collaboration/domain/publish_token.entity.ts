@@ -7,7 +7,7 @@ import uid from 'uid';
 
 import { Draft } from './draft.entity';
 
-@Entity({ name: 'publish_tokens' })
+@Entity({ name: 'collaboration_publish_tokens' })
 export class PublishToken {
   static RATING_THRESHOLD = -5;
 
