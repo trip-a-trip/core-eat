@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.1](https://github.com/trip-a-trip/core-eat/compare/v1.10.0...v1.10.1) (2020-08-23)
+
+### Bug Fixes
+
+- **collaboration:** fix table names in entities ([8121860](https://github.com/trip-a-trip/core-eat/commit/81218604a091e56ea39edcf464175af7525276fc))
+
 ## [1.10.0](https://github.com/trip-a-trip/core-eat/compare/v1.9.0...v1.10.0) (2020-08-23)
 
 ### Features
