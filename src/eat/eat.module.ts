@@ -15,12 +15,10 @@ import { Venue } from './domain/Venue.entity';
 import { Seen } from './domain/Seen.entity';
 
 @Module({
-  imports: [
-    ConfigModule,
-    TypeOrmModule.forFeature([Venue, Seen]),
-  ],
+  imports: [ConfigModule, TypeOrmModule.forFeature([Venue, Seen])],
   controllers: [VenueController, HistoryController],
   providers: [VenueChoicer, Historian, VenueFinder, VenueCreator, SeenFinder],
+  exports: [VenueCreator],
 })
 export class EatModule implements NestModule {
   configure() {

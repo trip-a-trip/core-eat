@@ -4,9 +4,15 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { EatModule } from './eat/eat.module';
 import { typeOrmProvider } from './external/typeOrmProvider';
 import { UserModule } from './user/user.module';
+import { CollaborationModule } from './collaboration/collaboration.module';
 
 @Module({
-  imports: [TypeOrmModule.forRootAsync(typeOrmProvider), EatModule, UserModule],
+  imports: [
+    TypeOrmModule.forRootAsync(typeOrmProvider),
+    EatModule,
+    UserModule,
+    CollaborationModule,
+  ],
   controllers: [],
   providers: [],
 })
