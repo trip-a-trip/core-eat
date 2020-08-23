@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.10.0](https://github.com/trip-a-trip/core-eat/compare/v1.9.0...v1.10.0) (2020-08-23)
+
+### Features
+
+- **collaboration:** move collaboration core to this repo ([785a725](https://github.com/trip-a-trip/core-eat/commit/785a725857ab1afd7c3d6e0271663d285ed80a2c))
+
+### Bug Fixes
+
+- **collaboration:** remove http call to eat module ([166ef52](https://github.com/trip-a-trip/core-eat/commit/166ef5296505dd42023fed02c26a842987be4a6a))
+
 ## [1.9.0](https://github.com/trip-a-trip/core-eat/compare/v1.8.0...v1.9.0) (2020-08-21)
 
 ### Features
