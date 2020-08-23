@@ -1,8 +1,9 @@
 import { InjectEntityManager, InjectRepository } from '@nestjs/typeorm';
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { EntityManager, Repository } from 'typeorm';
-import { EatClient } from '@trip-a-trip/lib';
 import uid from 'uid';
+
+import { VenueCreator } from '&app/eat/application/VenueCreator';
 
 import { Draft } from '../domain/draft.entity';
 import { TaskManager } from './task_manager';
@@ -15,7 +16,7 @@ export class Moderator {
     @InjectRepository(Draft)
     private readonly draftRepo: Repository<Draft>,
     private readonly tasks: TaskManager,
-    private readonly eat: EatClient,
+    private readonly venues: VenueCreator,
   ) {}
 
   async approve(draftId: string, moderatorId: string) {
@@ -32,7 +33,7 @@ export class Moderator {
 
       await Promise.all([
         this.tasks.notifyAboutModeration(draft),
-        this.eat.createVenue({
+        this.venues.create({
           ...draft.fields,
           id: uid(20),
           authorId: draft.authorId,

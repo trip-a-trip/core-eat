@@ -10,6 +10,7 @@ import {
 
 import { ConfigModule } from '&app/external/config.module';
 import { bullProvider } from '&app/external/bullProvider';
+import { EatModule } from '&app/eat/eat.module';
 
 import { PublishToken } from './domain/publish_token.entity';
 import { Collaborator } from './domain/collaborator.entity';
@@ -26,6 +27,7 @@ import { PublicationController } from './presentation/http/controller/publicatio
 @Module({
   imports: [
     ConfigModule,
+    EatModule,
     TypeOrmModule.forFeature([Collaborator, Draft, Invite, PublishToken]),
     BullModule.registerQueueAsync(
       bullProvider(MODERATION_REQUEST_QUEUE),
