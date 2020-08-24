@@ -12,7 +12,7 @@ Backend for Trip Trip project
    - `REDIS_HOST`, `REDIS_PORT`, `REDIS_USER`, `REDIS_PASSWORD` — config for Redis
 5. Initialize DB by `yarn evolutions -i`
 6. Sync DB-scheme by `yarn evolutions`
-7. Strta dev-server by `yarn dev`
+7. Start dev-server by `yarn dev`
 8. Server runs on [localhost:3000](http://localhost:3000/docs)
 
 ## Production
