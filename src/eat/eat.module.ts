@@ -2,10 +2,8 @@ import { NestModule, Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { ConfigModule } from '&app/external/config.module';
-import { typeOrmProvider } from '&app/external/typeOrmProvider';
 
 import { VenueController } from './presentation/http/VenueController';
-import { HistoryController } from './presentation/http/HistoryController';
 import { VenueChoicer } from './domain/VenueChoicer';
 import { Historian } from './domain/Historian';
 import { VenueFinder } from './infrastructure/VenueFinder';
@@ -16,7 +14,7 @@ import { Seen } from './domain/Seen.entity';
 
 @Module({
   imports: [ConfigModule, TypeOrmModule.forFeature([Venue, Seen])],
-  controllers: [VenueController, HistoryController],
+  controllers: [VenueController],
   providers: [VenueChoicer, Historian, VenueFinder, VenueCreator, SeenFinder],
   exports: [VenueCreator],
 })
