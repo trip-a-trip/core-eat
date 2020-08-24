@@ -3,7 +3,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { EntityManager, Repository } from 'typeorm';
 import uid from 'uid';
 
-import { VenueCreator } from '&app/eat/application/VenueCreator';
+import { VenueCreator } from '&app/eat/application/venue_creator';
 
 import { Draft } from '../domain/draft.entity';
 import { TaskManager } from './task_manager';

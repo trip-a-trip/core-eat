@@ -2,13 +2,14 @@ import { Injectable } from '@nestjs/common';
 import { chain } from 'lodash';
 import { getTimes } from 'suncalc';
 import { differenceInMinutes } from 'date-fns';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { VenueKind } from '@trip-a-trip/lib';
 
 import { getDistanceInMeters, Coordinates } from '&app/lib/geo';
 import { getAverage } from '&app/lib/math';
 
-import { Venue } from './Venue.entity';
-import { VenueFinder } from '../infrastructure/VenueFinder';
-import { VenueKind } from './VenueKind';
+import { Venue } from './venue.entity';
 
 const DISTANCE_THRESHOLD_IN_METERS = 2000;
 const AMAZING_MULTIPILER = 1.5;
@@ -17,13 +18,16 @@ const NO_REAL_EAT_MULTIPILER = 0.7;
 
 @Injectable()
 export class VenueChoicer {
-  constructor(private readonly store: VenueFinder) {}
+  constructor(
+    @InjectRepository(Venue)
+    private readonly repo: Repository<Venue>,
+  ) {}
 
   async choice(
     coordinates: Coordinates,
     skipIds: string[],
   ): Promise<Venue | null> {
-    const venues = await this.store.findAll();
+    const venues = await this.repo.find();
 
     const fitVenues = this.getFitVenues(coordinates, venues, skipIds);
 

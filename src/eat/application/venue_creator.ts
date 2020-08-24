@@ -3,7 +3,7 @@ import { plainToClass } from 'class-transformer';
 import { Injectable } from '@nestjs/common';
 import { EntityManager } from 'typeorm';
 
-import { Venue } from '../domain/Venue.entity';
+import { Venue } from '../domain/venue.entity';
 
 @Injectable()
 export class VenueCreator {

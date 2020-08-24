@@ -11,15 +11,13 @@ import {
   Query,
   UseInterceptors,
   ParseArrayPipe,
-  Post,
-  Body,
 } from '@nestjs/common';
 
 import { Coordinates } from '&app/lib/geo';
-import { VenueCreator } from '&app/eat/application/VenueCreator';
-import { VenueChoicer } from '&app/eat/domain/VenueChoicer';
-import { Historian } from '&app/eat/domain/Historian';
-import { Venue } from '&app/eat/domain/Venue.entity';
+import { VenueCreator } from '&app/eat/application/venue_creator';
+import { VenueChoicer } from '&app/eat/domain/venue_choicer';
+import { Historian } from '&app/eat/domain/historian';
+import { Venue } from '&app/eat/domain/venue.entity';
 import { TransformInterceptor, ParseFloatPipe } from '&app/lib/nest';
 
 @Controller('/v1/venue')

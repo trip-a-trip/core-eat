@@ -2,8 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { EntityManager } from 'typeorm';
 import { InjectEntityManager } from '@nestjs/typeorm';
 
-import { Venue } from './Venue.entity';
-import { Seen } from './Seen.entity';
+import { Venue } from './venue.entity';
+import { Seen } from './seen.entity';
 
 @Injectable()
 export class Historian {
