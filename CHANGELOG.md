@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.11.0](https://github.com/trip-a-trip/core-eat/compare/v1.10.2...v1.11.0) (2020-08-24)
+
+### Features
+
+- **eat:** remove create venue endpoint ([a0b408f](https://github.com/trip-a-trip/core-eat/commit/a0b408f2c8f7ab7f341ac2ad8366fc2fb8fac84e))
+- **eat:** remove history controller ([1609efe](https://github.com/trip-a-trip/core-eat/commit/1609efeeca3f5335a85c227a8d68571d86b85ce0))
+
 ### [1.10.2](https://github.com/trip-a-trip/core-eat/compare/v1.10.1...v1.10.2) (2020-08-23)
 
 ### Bug Fixes
