@@ -31,12 +31,6 @@ export class VenueController {
     private readonly history: Historian,
   ) {}
 
-  @Post('/')
-  @ApiCreatedResponse()
-  async create(@Body() draft: Venue) {
-    await this.creator.create(draft);
-  }
-
   @Get('/')
   @ApiOkResponse({ type: Venue })
   @ApiQuery({ name: 'skipIds', type: 'string', isArray: true, required: false })
