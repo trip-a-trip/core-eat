@@ -1,9 +1,4 @@
-import {
-  ApiOkResponse,
-  ApiNotFoundResponse,
-  ApiQuery,
-  ApiCreatedResponse,
-} from '@nestjs/swagger';
+import { ApiOkResponse, ApiNotFoundResponse, ApiQuery } from '@nestjs/swagger';
 import {
   Controller,
   Get,
@@ -12,9 +7,10 @@ import {
   UseInterceptors,
   ParseArrayPipe,
 } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 
 import { Coordinates } from '&app/lib/geo';
-import { VenueCreator } from '&app/eat/application/venue_creator';
 import { VenueChoicer } from '&app/eat/domain/venue_choicer';
 import { Historian } from '&app/eat/domain/historian';
 import { Venue } from '&app/eat/domain/venue.entity';
@@ -24,10 +20,19 @@ import { TransformInterceptor, ParseFloatPipe } from '&app/lib/nest';
 @UseInterceptors(TransformInterceptor)
 export class VenueController {
   constructor(
-    private readonly creator: VenueCreator,
     private readonly venues: VenueChoicer,
     private readonly history: Historian,
+    @InjectRepository(Venue)
+    private readonly repo: Repository<Venue>,
   ) {}
+
+  @Get('/list')
+  @ApiOkResponse({ type: Venue, isArray: true })
+  async list() {
+    const venues = await this.repo.find();
+
+    return venues;
+  }
 
   @Get('/')
   @ApiOkResponse({ type: Venue })
