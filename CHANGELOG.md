@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.12.0](https://github.com/trip-a-trip/core-eat/compare/v1.11.0...v1.12.0) (2020-09-01)
+
+### Features
+
+- **eat:** add list endpoint ([d8119d1](https://github.com/trip-a-trip/core-eat/commit/d8119d1cde022531867622ba02d9a38aa29baba8))
+
+### Bug Fixes
+
+- **eat:** fix case ([d3cb37b](https://github.com/trip-a-trip/core-eat/commit/d3cb37bd3d14d606b020fb81ecd78577e2c82967))
+
 ## [1.11.0](https://github.com/trip-a-trip/core-eat/compare/v1.10.2...v1.11.0) (2020-08-24)
 
 ### Features
