@@ -10,6 +10,12 @@ const client = new Client({
   password: config.getStringOrThrow('DB_PASSWORD'),
   port: config.getStringOrThrow('DB_PORT'),
   host: config.getStringOrThrow('DB_HOST'),
+  ssl: config.isProd()
+    ? {
+        require: true,
+        rejectUnauthorized: false,
+      }
+    : undefined,
 });
 
 client.connect().then(() => {

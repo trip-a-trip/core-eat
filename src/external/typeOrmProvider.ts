@@ -15,6 +15,12 @@ export const typeOrmProvider: TypeOrmModuleAsyncOptions = {
       database: config.getStringOrThrow('DB_NAME'),
       entities: [join(__dirname, '/../**/*.entity.{ts,js}')],
       synchronize: false,
+      ssl: config.isProd()
+        ? {
+            require: true,
+            rejectUnauthorized: false,
+          }
+        : undefined,
     };
   },
   inject: [Configuration],
