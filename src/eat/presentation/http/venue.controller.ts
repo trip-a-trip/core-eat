@@ -45,7 +45,11 @@ export class VenueController {
   @ApiOkResponse({ type: Venue })
   @ApiNotFoundResponse()
   async get(@Param('id') id: string) {
-    const venue = await this.repo.findOneOrFail(id);
+    const venue = await this.repo.findOne(id);
+
+    if (!venue) {
+      throw new NotFoundException('Venue not found');
+    }
 
     return venue;
   }
