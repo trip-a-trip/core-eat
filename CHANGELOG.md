@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.13.1](https://github.com/trip-a-trip/core-eat/compare/v1.13.0...v1.13.1) (2020-12-28)
+
+### Bug Fixes
+
+- **venue:** fix get endpoint 404 ([872b36e](https://github.com/trip-a-trip/core-eat/commit/872b36eb21bf435fa1f75cfc8b6fc33d79917b9b))
+
 ## [1.13.0](https://github.com/trip-a-trip/core-eat/compare/v1.12.3...v1.13.0) (2020-12-28)
 
 ### Features
