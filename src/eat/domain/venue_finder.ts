@@ -18,7 +18,7 @@ export class VenueFinder {
   }
 
   async findAll(): Promise<Venue[]> {
-    const venues = await this.repo.find();
+    const venues = await this.repo.find({ where: { disabled: false } });
 
     return venues;
   }

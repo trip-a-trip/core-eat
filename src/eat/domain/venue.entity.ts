@@ -69,10 +69,17 @@ export class Venue {
   @ApiProperty({ example: 'efkl5645m' })
   readonly authorId: string | null = null;
 
+  @Column({ name: 'disabled' })
+  private disabled: boolean = false;
+
   constructor(id: string, name: string, latitude: number, longitude: number) {
     this.id = id;
     this.name = name;
     this.latitude = latitude;
     this.longitude = longitude;
+  }
+
+  disable() {
+    this.disabled = true;
   }
 }

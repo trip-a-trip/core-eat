@@ -10,11 +10,12 @@ import { VenueCreator } from './application/venue_creator';
 import { Venue } from './domain/venue.entity';
 import { Seen } from './domain/seen.entity';
 import { VenueFinder } from './domain/venue_finder';
+import { VenueManager } from './application/venue_manager';
 
 @Module({
   imports: [ConfigModule, TypeOrmModule.forFeature([Venue, Seen])],
   controllers: [VenueController],
-  providers: [VenueChoicer, VenueFinder, Historian, VenueCreator],
+  providers: [VenueChoicer, VenueFinder, VenueManager, Historian, VenueCreator],
   exports: [VenueCreator],
 })
 export class EatModule implements NestModule {

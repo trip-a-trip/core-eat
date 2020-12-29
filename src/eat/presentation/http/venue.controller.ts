@@ -3,6 +3,7 @@ import {
   ApiNotFoundResponse,
   ApiQuery,
   ApiTags,
+  ApiNoContentResponse,
 } from '@nestjs/swagger';
 import {
   Controller,
@@ -12,6 +13,9 @@ import {
   UseInterceptors,
   ParseArrayPipe,
   Param,
+  Delete,
+  HttpCode,
+  HttpStatus,
 } from '@nestjs/common';
 
 import { Coordinates } from '&app/lib/geo';
@@ -20,6 +24,7 @@ import { Historian } from '&app/eat/domain/historian';
 import { Venue } from '&app/eat/domain/venue.entity';
 import { TransformInterceptor, ParseFloatPipe } from '&app/lib/nest';
 import { VenueFinder } from '&app/eat/domain/venue_finder';
+import { VenueManager } from '&app/eat/application/venue_manager';
 
 @Controller('/v1/venue')
 @ApiTags('venue')
@@ -29,6 +34,7 @@ export class VenueController {
     private readonly venues: VenueChoicer,
     private readonly history: Historian,
     private readonly finder: VenueFinder,
+    private readonly manager: VenueManager,
   ) {}
 
   @Get('/list')
@@ -50,6 +56,20 @@ export class VenueController {
     }
 
     return venue;
+  }
+
+  @Delete('/:id')
+  @HttpCode(HttpStatus.NO_CONTENT)
+  @ApiNoContentResponse()
+  @ApiNotFoundResponse()
+  async delete(@Param('id') id: string) {
+    const venue = await this.finder.findOne(id);
+
+    if (!venue) {
+      throw new NotFoundException('Venue not found');
+    }
+
+    await this.manager.delete(venue);
   }
 
   @Get('/')
