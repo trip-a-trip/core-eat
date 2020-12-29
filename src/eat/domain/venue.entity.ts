@@ -63,11 +63,11 @@ export class Venue {
   @Column({ name: 'links', type: 'jsonb' })
   @ApiProperty({ type: Link, isArray: true })
   @Type(() => Link)
-  readonly links: Link[] = [];
+  links: Link[] = [];
 
   @Column({ name: 'author_id', type: 'varchar' })
   @ApiProperty({ example: 'efkl5645m' })
-  readonly authorId: string | null = null;
+  authorId: string | null = null;
 
   @Column({ name: 'disabled' })
   private disabled: boolean = false;

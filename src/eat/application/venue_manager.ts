@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import { Injectable } from '@nestjs/common';
 import { InjectEntityManager } from '@nestjs/typeorm';
 import { EntityManager } from 'typeorm';
@@ -15,6 +16,20 @@ export class VenueManager {
 
   async delete(venue: Venue) {
     venue.disable();
+
+    await this.em.save(venue);
+  }
+
+  async edit(venue: Venue, patch: Venue) {
+    venue.name = patch.name;
+    venue.description = patch.description;
+    venue.isExpensive = patch.isExpensive;
+    venue.isAmazing = patch.isAmazing;
+    venue.kind = patch.kind;
+    venue.address = patch.address;
+    venue.coordinates = patch.coordinates;
+    venue.links = patch.links;
+    venue.authorId = patch.authorId;
 
     await this.em.save(venue);
   }
