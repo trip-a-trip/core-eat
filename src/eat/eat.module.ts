@@ -9,11 +9,12 @@ import { Historian } from './domain/historian';
 import { VenueCreator } from './application/venue_creator';
 import { Venue } from './domain/venue.entity';
 import { Seen } from './domain/seen.entity';
+import { VenueFinder } from './domain/venue_finder';
 
 @Module({
   imports: [ConfigModule, TypeOrmModule.forFeature([Venue, Seen])],
   controllers: [VenueController],
-  providers: [VenueChoicer, Historian, VenueCreator],
+  providers: [VenueChoicer, VenueFinder, Historian, VenueCreator],
   exports: [VenueCreator],
 })
 export class EatModule implements NestModule {

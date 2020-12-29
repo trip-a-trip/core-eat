@@ -13,14 +13,13 @@ import {
   ParseArrayPipe,
   Param,
 } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
 
 import { Coordinates } from '&app/lib/geo';
 import { VenueChoicer } from '&app/eat/domain/venue_choicer';
 import { Historian } from '&app/eat/domain/historian';
 import { Venue } from '&app/eat/domain/venue.entity';
 import { TransformInterceptor, ParseFloatPipe } from '&app/lib/nest';
+import { VenueFinder } from '&app/eat/domain/venue_finder';
 
 @Controller('/v1/venue')
 @ApiTags('venue')
@@ -29,14 +28,13 @@ export class VenueController {
   constructor(
     private readonly venues: VenueChoicer,
     private readonly history: Historian,
-    @InjectRepository(Venue)
-    private readonly repo: Repository<Venue>,
+    private readonly finder: VenueFinder,
   ) {}
 
   @Get('/list')
   @ApiOkResponse({ type: Venue, isArray: true })
   async list() {
-    const venues = await this.repo.find();
+    const venues = await this.finder.findAll();
 
     return venues;
   }
@@ -45,7 +43,7 @@ export class VenueController {
   @ApiOkResponse({ type: Venue })
   @ApiNotFoundResponse()
   async get(@Param('id') id: string) {
-    const venue = await this.repo.findOne(id);
+    const venue = await this.finder.findOne(id);
 
     if (!venue) {
       throw new NotFoundException('Venue not found');
